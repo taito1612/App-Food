@@ -1,0 +1,58 @@
+.item{
+    height: 277px;
+    min-width: 216px;
+    position: relative;
+    margin: 10px 15px;
+    display: block;
+    border-radius: 6px 6px 6px 6px;
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+}
+
+.item:hover{
+    transition: box-shadow .25s;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%), 0 4px 15px 0 rgb(0 0 0 / 19%);
+    text-decoration: none;
+}
+
+.list-item{
+    display: flex;
+    padding: 0 15px;
+    margin: 50px 0;
+    margin-left: 80px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.list-Title-food{
+    position: absolute;
+    top: 205px;
+    left: 10px;
+
+}
+
+.list-price{
+    position: absolute;
+    top: 228px;
+    left: 10px;
+
+}
+
+.list-btn{
+    position: absolute;
+    top: 253px;
+    left: 137px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: red;
+}
+
+.list-btn:hover{
+    cursor: pointer;
+    color: #fff;
+    background-color: #a30a0f;
+}
+
+
+

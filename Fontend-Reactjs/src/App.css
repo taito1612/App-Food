@@ -1,0 +1,146 @@
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.card-container.card {
+  max-width: 350px !important;
+  padding: 40px 40px;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.background-color {
+  background: linear-gradient(
+    135deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+}
+
+@import "~antd/dist/antd.css";
+@import "./style//StyleProduced.css";
+
+.code-box-demo {
+  text-align: center;
+}
+.ant-layout-header,
+.ant-layout-footer {
+  color: #fff;
+  background: #7dbcea;
+}
+[data-theme="dark"] .ant-layout-header {
+  background: #6aa0c7;
+}
+[data-theme="dark"] .ant-layout-footer {
+  background: #6aa0c7;
+}
+.ant-layout-footer {
+  line-height: 1.5;
+}
+.ant-layout-sider {
+  color: #fff;
+  line-height: 120px;
+  background: #3ba0e9;
+}
+[data-theme="dark"] .ant-layout-sider {
+  background: #3499ec;
+}
+.ant-layout-content {
+  min-height: 120px;
+  color: #fff;
+  line-height: 120px;
+  background: rgba(16, 142, 233, 1);
+}
+[data-theme="dark"] .ant-layout-content {
+  background: #107bcb;
+}
+.code-box-demo > .ant-layout + .ant-layout {
+  margin-top: 48px;
+}
+
+.ant-layout-content {
+  min-height: 120px;
+  color: #fff;
+  line-height: 120px;
+  height: 100vh;
+  background: rgba(16, 142, 233, 1);
+}
+
+.rowItem {
+  margin-top: -44px;
+  margin-left: -52px;
+  display: flex;
+}
+
+.colums {
+  height: 280px;
+  width: 220px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 22px 0px;
+  margin-left: 32px;
+}
+
+.Card-item {
+  width: 218px;
+}
+
+.ant-card-cover > * {
+  display: block;
+  width: 214px;
+}
+
+.ant-card-body {
+  padding: 0 0;
+  height: 118px;
+  width: 215px;
+}
+
+.ant-card-meta-description {
+  color: rgba(0, 0, 0, 0.45);
+  margin-left: 24px;
+  margin-top: 4px;
+}
+
+.ant-card-meta-detail > div:not(:last-child) {
+  margin-left: 15px;
+  margin-top: 13px;
+  margin-bottom: -5px;
+  font-size: 24px;
+}
+
+.ant-card-cover img {
+  border-radius: 9px 9px 9px 9px;
+  height: 188px;
+}
+
+.ant-btn-block {
+  width: 44%;
+  margin-left: 116px;
+  margin-top: 17px;
+}
+.ant-layout-content{
+  margin: 0 0;
+}

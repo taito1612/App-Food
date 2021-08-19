@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<spring-boot-security-jwt>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.vmu.App.Application",
+            "projectName": "spring-boot-security-jwt",
+            "args": ""
+        }
+    ]
+}

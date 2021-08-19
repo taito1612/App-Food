@@ -1,0 +1,73 @@
+.logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+[data-theme="dark"] .site-layout .site-layout-background {
+  background: #141414;
+}
+.item {
+  height:  204px;
+  min-width: 202px;
+  position: relative;
+  margin: 10px 15px;
+  display: flex;
+  border-radius: 6px 6px 6px 6px;
+  background-color: #fff;
+  border: 1px solid #d7d7d7;
+}
+
+.item:hover {
+  transition: box-shadow 0.25s;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%), 0 4px 15px 0 rgb(0 0 0 / 19%);
+  text-decoration: none;
+}
+
+.list-item {
+  display: flex;
+  padding: 0 15px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.list-Title-food {
+  position: absolute;
+  top: 152px;
+  left: 8px;
+}
+
+.list-price {
+  position: absolute;
+  top: 184px;
+  left: 13px;
+}
+
+.list-btn {
+  position: absolute;
+    top: 211px;
+    left: 110px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    min-width: 74px;
+    min-height: 33px;
+    background-color: red;
+}
+
+.list-btn:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #a30a0f;
+}
+
+img {
+  height: 156px;
+  border-radius: 15px;
+  margin-left: 1.5px;
+  margin-top: 2px;
+}
