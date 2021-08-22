@@ -90,7 +90,7 @@ label {
 
 .rowItem {
   margin-top: -44px;
-  margin-left: -52px;
+  margin-left: 9px;
   display: flex;
 }
 
@@ -141,6 +141,154 @@ label {
   margin-left: 116px;
   margin-top: 17px;
 }
-.ant-layout-content{
+.ant-layout-content {
   margin: 0 0;
+}
+
+.Breadcrumb-Header {
+  height: 47px;
+}
+
+.login {
+  position: absolute;
+  right: 23px;
+  top: 13px;
+}
+
+.btn-login {
+  position: absolute;
+  width: 113px;
+  top: 10px;
+  right: 20px;
+  margin: 0 0;
+}
+
+.btn-registration {
+  position: absolute;
+  width: 113px;
+  top: 10px;
+  right: 140px;
+  margin: 0 0;
+}
+
+.ant-breadcrumb .anticon {
+  font-size: 30px;
+  right: 222px;
+  top: 43px;
+  color: white;
+}
+
+.Input-Search {
+  position: relative;
+  top: 5px;
+  left: 35px;
+    width: 838px;
+    height: 44px;
+  margin: 1px 1px;
+  padding: 3px 0px;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.Input-Search-text {
+  position: absolute;
+  outline: none;
+  width: 722px;
+  height: 41px;
+  padding-left: 0px;
+  border-radius: 3px;
+  border: none;
+  margin-left: 15px;
+  color: #666;
+  top: 1px;
+}
+
+.icon-card {
+  position: absolute;
+  top: 43px;
+  font-size: 20px;
+}
+
+.btn-Search {
+  position: absolute;
+  top: 5px;
+    right: 8px;
+  background-color: #108ee9;
+  border-radius: 5px;
+  height: 34px;
+  width: 94px;
+  padding: 0px 0px;
+}
+
+.ant-btn > .anticon {
+  line-height: 0;
+}
+
+.btn-search-icon {
+  color: white;
+  margin: 0px 0;
+  font-size: 20px;
+}
+
+.btn-Search:hover {
+  background-color: #108ee9;
+}
+
+.logo {
+  height: 46px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-layout-sider-trigger {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  height: 48px;
+  color: #fff;
+  line-height: 48px;
+  text-align: center;
+  background: #108ee9;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.ant-menu-dark.ant-menu-inline,
+.ant-menu-dark.ant-menu-vertical,
+.ant-menu-dark.ant-menu-vertical-left,
+.ant-menu-dark.ant-menu-vertical-right {
+  border-right: 0;
+  background-color: #108ee9;
+}
+
+.ant-menu-dark .ant-menu-inline.ant-menu-sub {
+  background: #108ee9;
+}
+
+.Header-app {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+}
+
+.Header-item {
+  display: flex;
+}
+
+.item-btn{
+  margin-left: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+.Content-app{
+  height: 100%;
+  width: 100%;
 }

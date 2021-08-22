@@ -3,14 +3,13 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
-
 import AuthService from "../services/auth.service";
 
-const required = value => {
+const required = (value) => {
   if (!value) {
     return (
       <div className="alert alert-danger" role="alert">
-        This field is required!
+        Bắt buộc nhập
       </div>
     );
   }
@@ -27,19 +26,19 @@ export default class Login extends Component {
       username: "",
       password: "",
       loading: false,
-      message: ""
+      message: "",
     };
   }
 
   onChangeUsername(e) {
     this.setState({
-      username: e.target.value
+      username: e.target.value,
     });
   }
 
   onChangePassword(e) {
     this.setState({
-      password: e.target.value
+      password: e.target.value,
     });
   }
 
@@ -48,7 +47,7 @@ export default class Login extends Component {
 
     this.setState({
       message: "",
-      loading: true
+      loading: true,
     });
 
     this.form.validateAll();
@@ -56,10 +55,10 @@ export default class Login extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
-          this.props.history.push("/produced");
+          this.props.history.push("/home");
           window.location.reload();
         },
-        error => {
+        (error) => {
           const resMessage =
             (error.response &&
               error.response.data &&
@@ -69,21 +68,21 @@ export default class Login extends Component {
 
           this.setState({
             loading: false,
-            message: resMessage
+            message: resMessage,
           });
         }
       );
     } else {
       this.setState({
-        loading: false
+        loading: false,
       });
     }
   }
 
   render() {
     return (
-      <div className="col-md-12">
-        <div className="card card-container background-color">
+      <div className="Login-app">
+        <div className="Login-app-Group">
           <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
@@ -92,12 +91,14 @@ export default class Login extends Component {
 
           <Form
             onSubmit={this.handleLogin}
-            ref={c => {
+            ref={(c) => {
               this.form = c;
             }}
           >
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              <p className="form-label" htmlFor="username">
+                Username
+              </p>
               <Input
                 type="text"
                 className="form-control"
@@ -106,10 +107,10 @@ export default class Login extends Component {
                 onChange={this.onChangeUsername}
                 validations={[required]}
               />
-            </div>
 
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <p className="form-label" htmlFor="password">
+                Password
+              </p>
               <Input
                 type="password"
                 className="form-control"
@@ -122,7 +123,7 @@ export default class Login extends Component {
 
             <div className="form-group">
               <button
-                className="btn btn-primary btn-block"
+                className="btn btn-primary btn-block btn-Login"
                 disabled={this.state.loading}
               >
                 {this.state.loading && (
@@ -141,7 +142,7 @@ export default class Login extends Component {
             )}
             <CheckButton
               style={{ display: "none" }}
-              ref={c => {
+              ref={(c) => {
                 this.checkBtn = c;
               }}
             />

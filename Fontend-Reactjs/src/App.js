@@ -1,30 +1,24 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import {
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
-  MenuUnfoldOutlined,
-} from "@ant-design/icons";
+
 import "./style/StyleLogin.css";
-import { Row, Col } from "antd";
+
+import { Switch, Route, Link } from "react-router-dom";
+
+import { Layout, Button } from "antd";
+
+import { SearchOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
 import "./style/index.css";
-import { Card } from "antd";
-import ProducesService from "./services/produce.service";
-import { Layout, Menu, Breadcrumb } from "antd";
-import { Button } from "antd";
 
 import AuthService from "./services/auth.service";
 
 import EventBus from "./common/EventBus";
+import Home from "./components/home.component";
 
-const { Content, Sider } = Layout;
-const { SubMenu } = Menu;
-const { Meta } = Card;
+import Login from "./components/login.component.jsx";
+import Register from "./components/register.component";
 
 class App extends Component {
   constructor(props) {
@@ -42,11 +36,8 @@ class App extends Component {
 
   componentDidMount() {
     const user = AuthService.getCurrentUser();
-    ProducesService.getCurrentProduces().then((res) => {
-      this.setState({ produceds: res.data });
-    });
 
-    console.log(this.state.produceds);
+    console.log(user);
 
     if (user) {
       this.setState({
@@ -60,11 +51,6 @@ class App extends Component {
       this.logOut();
     });
   }
-
-  onCollapse = (collapsed) => {
-    console.log(collapsed);
-    this.setState({ collapsed });
-  };
 
   componentWillUnmount() {
     EventBus.remove("logout");
@@ -80,64 +66,65 @@ class App extends Component {
   }
 
   render() {
-    const { collapsed } = this.state;
-
+    const { currentUser } = this.state;
+    console.log(currentUser);
+    const { Header, Content } = Layout;
     return (
       <div>
-        <Layout style={{ minHeight: "100vh" }}>
-          <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
-            <div className="logo" />
-            <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-              <SubMenu key="sub1" icon={<UserOutlined/>} title="User">
-                <Menu.Item key="3">Thông tin tài khoản</Menu.Item>
-                <Menu.Item key="4">Tình trạng đơn hàng</Menu.Item>
-                <Menu.Item key="5">Đăng xuất</Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub2" icon={<MenuUnfoldOutlined />} title="Category">
-                <Menu.Item key="6">Team 1</Menu.Item>
-                <Menu.Item key="8">Team 2</Menu.Item>
-              </SubMenu>
-              <Menu.Item key="9" icon={<FileOutlined />}>
-                Files
-              </Menu.Item>
-            </Menu>
-          </Sider>
-          <Layout className="site-layout">
-            <Content style={{ margin: "0 0px" }}>
-              <Breadcrumb style={{ margin: "16px 9px" }}>
-                <Breadcrumb.Item>User</Breadcrumb.Item>
-                <Breadcrumb.Item>Bill</Breadcrumb.Item>
-              </Breadcrumb>
-              <div
-                className="site-layout-background"
-                style={{ padding: 24, minHeight: 360 }}
-              >
-                <Row className="rowItem">
-                  {this.state.produceds.map(
-                    food =>
-                    <Col className="colums" span={4}>
-                      <Card
-                        className="Card-item"
-                        hoverable
-                        cover={
-                          <img
-                            alt="example"
-                            src= {food.linkimage}
-                          />
-                        }
-                      >
-                        <Meta title={food.namefood} description={food.price}/>
-                        <Button type="primary" block>
-                          Đặt món
-                        </Button>
-                      </Card>
-                    </Col>
-                  )}
-                </Row>
-              </div>
-            </Content>
-          </Layout>
-        </Layout>
+        <Header className="Header-app">
+          <div className="Header-item">Icon</div>
+
+          <div>
+            <div className="Input-Search">
+              <input
+                className="Input-Search-text"
+                placeholder="Nhập vào nội dung muốn tìm kiếm"
+              ></input>
+              <Button className="btn-Search">
+                <SearchOutlined className="btn-search-icon" />
+              </Button>
+            </div>
+          </div>
+          {currentUser ? (
+            <div className="Header-item">
+              <li>
+                <Link className="item-btn" to="/login">
+                  {currentUser !== undefined
+                    ? currentUser.username
+                    : "Đăng nhập"}
+                </Link>
+              </li>
+
+              <li>
+                <Link className="item-btn" to="/login" onClick={this.logOut}>
+                  Đăng xuất
+                </Link>
+              </li>
+            </div>
+          ) : (
+            <div className="Header-item">
+              <li>
+                <Link className="item-btn" to="/login">
+                  Đăng nhập
+                </Link>
+              </li>
+
+              <li>
+                <Link className="item-btn" to={"/register"}>
+                  Đăng ký
+                </Link>
+              </li>
+            </div>
+          )}
+        </Header>
+        <Content className="Content-app">
+          <Switch>
+            <Route exact path={"/login"} component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/home" component={Home} />
+
+          </Switch>
+        </Content>
       </div>
     );
   }

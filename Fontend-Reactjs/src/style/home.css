@@ -1,0 +1,211 @@
+.code-box-demo > .ant-layout + .ant-layout {
+  margin-top: 48px;
+}
+
+.site-layout-background{
+    padding: 7px;
+    min-height: 472px;
+}
+
+.ant-layout-sider-trigger
+
+.ant-layout-content {
+  min-height: 120px;
+  color: #fff;
+  line-height: 120px;
+  height: 100vh;
+  background: rgba(16, 142, 233, 1);
+}
+
+.rowItem {
+  margin-top: -23px;
+  margin-left: -33px;
+  display: flex;
+}
+
+.colums {
+  height: 280px;
+  width: 220px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 22px 0px;
+  margin-left: 32px;
+}
+
+.Card-item {
+  width: 218px;
+}
+
+.ant-card-cover > * {
+  display: block;
+  width: 214px;
+}
+
+.ant-card-body {
+  padding: 0 0;
+  height: 118px;
+  width: 215px;
+}
+
+.ant-card-meta-description {
+  color: rgba(0, 0, 0, 0.45);
+  margin-left: 24px;
+  margin-top: 4px;
+}
+
+.ant-card-meta-detail > div:not(:last-child) {
+  margin-left: 15px;
+  margin-top: 13px;
+  margin-bottom: -5px;
+  font-size: 24px;
+}
+
+.ant-card-cover img {
+  border-radius: 9px 9px 9px 9px;
+  height: 188px;
+}
+
+.ant-btn-block {
+  width: 44%;
+  margin-left: 116px;
+  margin-top: 17px;
+}
+.ant-layout-content {
+  margin: 0 0;
+}
+
+.Breadcrumb-Header {
+  height: 68px;
+  position: relative;
+}
+
+.login {
+  position: absolute;
+  right: 23px;
+  top: 13px;
+}
+
+.btn-login {
+  position: absolute;
+  width: 113px;
+  top: 10px;
+  right: 20px;
+  margin: 0 0;
+}
+
+.btn-registration {
+  position: absolute;
+  width: 113px;
+  top: 10px;
+  right: 140px;
+  margin: 0 0;
+}
+
+.ant-breadcrumb .anticon {
+  font-size: 30px;
+  right: 222px;
+  top: 43px;
+  color: white;
+}
+
+/* .Input-Search {
+  width: 828px;
+  height: 47px;
+  margin: 1px 1px;
+  padding: 3px 1px;
+  border-radius: 3px;
+  background-color: white;
+} */
+
+.Input-Search-text {
+  outline: none;
+  width: 667px;
+  height: 41px;
+  padding-left: 0px;
+  border-radius: 3px;
+  border: none;
+  margin-left: 54px;
+  padding-top: 10px;
+  font-size: 21px;
+  padding-bottom: 11px;
+}
+
+.icon-card {
+  position: absolute;
+  top: 43px;
+  font-size: 20px;
+}
+
+.btn-Search {
+  background-color: #108ee9;
+  border-radius: 5px;
+  height: 40px;
+  width: 97px;
+  padding: 8px 0px;
+}
+
+.btn-search-icon {
+  color: white;
+  margin: -4px 0;
+  font-size: 5px;
+}
+
+.btn-search-icon:hover {
+  background-color: red;
+}
+
+.logo {
+  height: 46px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-layout-sider-trigger {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  height: 48px;
+  color: #fff;
+  line-height: 48px;
+  text-align: center;
+  background: #108ee9;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  height: 35px;
+}
+
+.ant-menu-dark.ant-menu-inline,
+.ant-menu-dark.ant-menu-vertical,
+.ant-menu-dark.ant-menu-vertical-left,
+.ant-menu-dark.ant-menu-vertical-right {
+  border-right: 0;
+  background-color: #108ee9;
+}
+
+.ant-menu-dark .ant-menu-inline.ant-menu-sub {
+  background: #108ee9;
+}
+
+.btn-controlles {
+  position: absolute;
+  right: -18px;
+  top: -12px;
+}
+
+.site-layout{
+    position: relative;
+}
+
+.btn-controlles{
+    position: absolute;
+}
+
+.card-container.card {
+    position: absolute;
+    max-width: 350px !important;
+    padding: 40px 40px;
+    top: -600px;
+    left: 530px;
+}
