@@ -1,25 +1,6 @@
-.code-box-demo > .ant-layout + .ant-layout {
-  margin-top: 48px;
-}
-
-.site-layout-background{
-    padding: 7px;
-    min-height: 472px;
-}
-
-.ant-layout-sider-trigger
-
-.ant-layout-content {
-  min-height: 120px;
-  color: #fff;
-  line-height: 120px;
-  height: 100vh;
-  background: rgba(16, 142, 233, 1);
-}
-
 .rowItem {
-  margin-top: -23px;
-  margin-left: -33px;
+  margin-top: 28px;
+  margin-left: -37px;
   display: flex;
 }
 
