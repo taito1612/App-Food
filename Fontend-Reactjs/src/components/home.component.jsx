@@ -41,6 +41,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="site-layout-background">
+
         <Row className="rowItem">
           {this.state.produceds.map((food) => (
             <Col className="colums" span={4}>
