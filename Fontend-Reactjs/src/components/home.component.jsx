@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ProducesService from "../services/produce.service";
+import CategoryService from "../services/Category.service";
 // import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -14,11 +15,7 @@ import { Card } from "antd";
 import { Button } from "antd";
 
 import { Layout, Menu } from "antd";
-import {
-  UserOutlined,
-  TeamOutlined,
-  FileOutlined,
-} from "@ant-design/icons";
+import { UserOutlined, TeamOutlined } from "@ant-design/icons";
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
@@ -31,7 +28,10 @@ export default class Home extends Component {
 
     this.state = {
       produceds: [],
+      category: [],
+      ChildCategoryFood: [],
     };
+    this.getFoodByCategory = this.getFoodByCategory.bind(this);
   }
 
   onCollapse = (collapsed) => {
@@ -43,6 +43,22 @@ export default class Home extends Component {
     ProducesService.getCurrentProduces().then((res) => {
       this.setState({ produceds: res.data });
     });
+
+    CategoryService.getCurrentProduces().then((res) => {
+      this.setState({ category: res.data });
+    });
+  }
+
+  getFoodByCategory(id) {
+    console.log(id);
+    ProducesService.getFoodByCategoryServer(id).then((res) => {
+      this.setState({ ChildCategoryFood: res.data });
+      console.log(this.state.ChildCategoryFood.length);
+    });
+  }
+
+  getAllProduced() {
+      this.setState({ ChildCategoryFood: [] });
   }
 
   render() {
@@ -55,36 +71,57 @@ export default class Home extends Component {
         >
           <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
             <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-              <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-                <Menu.Item key="1">Tom</Menu.Item>
-                <Menu.Item key="2">Bill</Menu.Item>
-                <Menu.Item key="3">Alex</Menu.Item>
+              <SubMenu key="sub1" icon={<UserOutlined />} title="Người dùng">
+                <Menu.Item key="6">Thông tin tài khoản</Menu.Item>
+                <Menu.Item key="7">Tình trạng đơn hàng</Menu.Item>
+                <Menu.Item key="8">Đăng xuất</Menu.Item>
               </SubMenu>
-              <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-                <Menu.Item key="4">Team 1</Menu.Item>
-                <Menu.Item key="5">Team 2</Menu.Item>
+
+              <SubMenu key="sub2" icon={<TeamOutlined />} title="Menu">
+              <Menu.Item onClick= { () => this.getAllProduced()}>Hiển thị toàn bộ món ăn</Menu.Item>
+                {this.state.category.map((cate) => (
+                  <Menu.Item key={cate.id} onClick= { () => this.getFoodByCategory(cate.id)}>{cate.namecategory}</Menu.Item>
+                ))}
               </SubMenu>
-              <Menu.Item key="6" icon={<FileOutlined />}>
-                Files
-              </Menu.Item>
+              <SubMenu key="sub3" icon={<TeamOutlined />} title="Admin">
+                <Menu.Item key="9">Thêm món ăn</Menu.Item>
+                <Menu.Item key="10">Thống kê đơn hàng</Menu.Item>
+                <Menu.Item key="11">Thống kê doanh thu</Menu.Item>
+                <Menu.Item key="12">Đăng xuất</Menu.Item>
+              </SubMenu>
             </Menu>
           </Sider>
           <Content style={{ padding: "0 24px", minHeight: 280 }}>
             <Row className="rowItem">
-              {this.state.produceds.map((food) => (
-                <Col className="colums" span={4}>
-                  <Card
-                    className="Card-item"
-                    hoverable
-                    cover={<img alt="example" src={food.linkimage} />}
-                  >
-                    <Meta title={food.namefood} description={food.price} />
-                    <Button type="primary" block>
-                      Đặt món
-                    </Button>
-                  </Card>
-                </Col>
-              ))}
+              {this.state.ChildCategoryFood.length > 0
+                ? this.state.ChildCategoryFood.map((food) => (
+                    <Col className="colums" span={4}>
+                      <Card
+                        className="Card-item"
+                        hoverable
+                        cover={<img alt="example" src={food.linkimage} />}
+                      >
+                        <Meta title={food.namefood} description={food.price} />
+                        <Button type="primary" block>
+                          Đặt món
+                        </Button>
+                      </Card>
+                    </Col>
+                  ))
+                : this.state.produceds.map((food) => (
+                    <Col className="colums" span={4}>
+                      <Card
+                        className="Card-item"
+                        hoverable
+                        cover={<img alt="example" src={food.linkimage} />}
+                      >
+                        <Meta title={food.namefood} description={food.price} />
+                        <Button type="primary" block>
+                          Đặt món
+                        </Button>
+                      </Card>
+                    </Col>
+                  ))}
             </Row>
           </Content>
         </Layout>

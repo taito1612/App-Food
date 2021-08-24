@@ -122,7 +122,7 @@
   border-radius: 5px;
   height: 40px;
   width: 97px;
-  padding: 8px 0px;
+  padding: 4px 0px;
 }
 
 .btn-search-icon {
@@ -131,9 +131,9 @@
   font-size: 5px;
 }
 
-.btn-search-icon:hover {
+/* .btn-search-icon:hover {
   background-color: red;
-}
+} */
 
 .logo {
   height: 46px;
@@ -169,10 +169,22 @@
   background: #108ee9;
 }
 
+.ant-layout-sider-children {
+  height: 100%;
+  margin-top: -0.1px;
+  padding-top: 41.1px;
+}
+
 .btn-controlles {
   position: absolute;
   right: -18px;
   top: -12px;
+}
+
+.anticon svg {
+  display: inline-block;
+  font-size: 26px;
+  margin-bottom: 4px;
 }
 
 .site-layout{
