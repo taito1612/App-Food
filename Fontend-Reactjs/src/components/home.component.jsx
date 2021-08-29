@@ -102,7 +102,7 @@ export default class Home extends Component {
                         cover={<img alt="example" src={food.linkimage} />}
                       >
                         <Meta title={food.namefood} description={food.price} />
-                        <Button type="primary" block>
+                        <Button  block>
                           Đặt món
                         </Button>
                       </Card>
@@ -116,7 +116,7 @@ export default class Home extends Component {
                         cover={<img alt="example" src={food.linkimage} />}
                       >
                         <Meta title={food.namefood} description={food.price} />
-                        <Button type="primary" block>
+                        <Button  block>
                           Đặt món
                         </Button>
                       </Card>
